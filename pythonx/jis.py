@@ -235,7 +235,7 @@ class Sorter:
     # empty lines as configured.
     def _updateBuffer(self, fullySortedImportStatements):
         # Remove the range of imports.
-        self._deleteRange(self._rangeStart, self._rangeEnd)
+        self._deleteRange(self._rangeStart, self._rangeEnd-1)
 
         # Insert Spacing into Middle Import List.
         spacedList  = self._insertSpacing(fullySortedImportStatements, self._depth)
@@ -245,6 +245,6 @@ class Sorter:
         startLine = self._insertListAtLine(startLine, spacedList)
 
         # Insert a newline at the end.
-        startLine = self._insertListAtLine(startLine, [""])
+        # startLine = self._insertListAtLine(startLine, [""])
 
 sorter = Sorter()
